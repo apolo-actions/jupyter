@@ -1,10 +1,10 @@
 # Run a Jupyter Notebook instance
 
-This is a [`neuro-flow`](https://github.com/neuro-inc/neuro-flow) action launching an instance of [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) or [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/). It's intended to be used with the Neu.ro [platform template](https://github.com/neuro-inc/cookiecutter-neuro-project), but can be adapted for other use cases as well.
+This is a [`apolo-flow`](https://github.com/neuro-inc/neuro-flow) action launching an instance of [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) or [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/). It's intended to be used with the Apolo [flow template](https://github.com/neuro-inc/flow-template), but can be adapted for other use cases as well.
 
 It requires the references to 5 volumes: data, code, config, notebooks and results. These volumes will be mounted to `/project/data`, `/project/modules`, `/project/config`, `/project/notebooks`, and `/project/results` respectively.
 
-By default, this action will use the `neuromation/base:latest` image to run Jupyter.
+By default, this action will use the `ghcr.io/neuro-inc/base:latest` image to run Jupyter.
 
 After the Jupyter instance is launched, its Web UI will be automatically opened in the default browser.
 
@@ -13,7 +13,7 @@ After the Jupyter instance is launched, its Web UI will be automatically opened 
 ```
 jobs:
   jupyter:
-    action: gh:neuro-actions/jupyter@master
+    action: gh:apolo-actions/jupyter@master
     args:
       volumes_data_remote: ${{ volumes.data.remote }}
       volumes_code_remote: ${{ volumes.code.remote }}
@@ -81,13 +81,13 @@ args:
 
 ### `image`
 
-The name of the image on which to run the Notebook instance. `neuromation/base:latest` by default.
+The name of the image on which to run the Notebook instance. `ghcr.io/neuro-inc/base:latest` by default.
 
 ### Example
 
 ```
 args:
-    image: neuromation/base
+    image: ghcr.io/neuro-inc/base:latest
 ```
 
 ### `preset`

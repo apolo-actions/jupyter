@@ -33,7 +33,7 @@ volumes:
 
 jobs:
   jupyter:
-    action: gh:neuro-actions/jupyter@master
+    action: gh:apolo-actions/jupyter@master
     args:
       volumes_data_remote: ${{ volumes.data.remote }}
       volumes_code_remote: ${{ volumes.code.remote }}
